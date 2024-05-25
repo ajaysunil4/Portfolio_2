@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-4xl;
+    @apply font-bold;
+  }
+
+  h2 {
+    @apply text-3xl;
+    @apply font-bold;
+  }
+
+  h3 {
+    @apply text-2xl;
+    @apply font-bold;
+  }
+
+  h4 {
+    @apply text-xl;
+    @apply font-semibold;
+  }
+
+  h5 {
+    @apply text-lg;
+    @apply font-semibold;
+  }
+
+  h6 {
+    @apply text-sm;
+    @apply font-semibold;
+  }
+}
+
+@layer utilities {
+  .overlay-mask {
+    mask-image: linear-gradient(0deg, rgb(0 0 0 / 100%) 0%, rgb(0 0 0 / 0%) 40%);
+  }
+}
+
+html,
+body {
+  overscroll-behavior: none;
+}
+
+body {
+  overflow-y: hidden;
+  overflow-x: hidden;
+
+}
+
+
+/* styles.css */
+.text-text {
+  font-size: 36px; /* Adjust the font size */
+  font-weight: bold; /* Adjust font weight if needed */
+  color: #0E1016; /* Text color */
+  text-shadow: 4px -2px 4px rgb(61, 61, 61), 0px 2px 8px rgb(61, 61, 61);
+  /* Adjust shadow offset and color as needed */
+}
+
+.waves {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 480px;
+  background-color: var(--color);
+  /* box-shadow: inset 10px 10px 50px rgb(0, 0, 0); */
+  transition: 500ms;
+}
+
+.waves::before,
+.waves::after {
+  content: '';
+  position: absolute;
+  width: 300vw;
+  height: 300vw;
+  top: -65vw;
+  left: 50%;
+  transform: translate(50%, 75%);
+}
+
+.waves::before {
+  border-radius: 44%;
+  background: rgb(150, 0, 0);
+  top: -64vw;
+  box-shadow: inset 10px 10px 50px rgb(0, 0, 0);
+  animation: waves 15s linear infinite;
+}
+
+.waves::after {
+  border-radius: 44%;
+  background: rgb(0, 0, 0);
+  box-shadow: inset 15px 15px 50px rgb(100, 100, 100);
+  animation: waves 23s linear infinite;
+}
+
+@keyframes waves {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+  
+  50% {
+    transform: translate(-50%, -75%) rotate(180deg);
+  }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
+}
+
+.shadow{
+  box-shadow: 10px 10px 50px rgb(0, 0, 0);
+}
